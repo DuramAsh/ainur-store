@@ -5,11 +5,17 @@
     font-family: Forum sans-serif Arial;
 }
 
+html {
+    background-image: url("https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2148999828.jpg?w=2000");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow-x: hidden;
+}
+
 .App {
     display: flex;
     flex-direction: column;
-    background-image: url("https://img.freepik.com/free-vector/hand-drawn-minimal-background_23-2148999828.jpg?w=2000");
-    background-repeat: no-repeat;
     align-items: center;
     width: 100vw;
     height: 100vh;

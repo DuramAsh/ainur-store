@@ -3,20 +3,18 @@ import SearchForm from '../SearchForm/SearchForm'
 import Selector from "../Selector/Selector"
 import classes from './App.module.css';
 import Logo from "../Logo/Logo";
-import {fetchProducts} from "../../utils/fetch"
-import Products from "../Products/Products";
+import ProductsList from "../Products/ProductsList";
 
 
 const App = () => {
-    return (
-        <div className={classes.App}>
-            <Logo/>
-            <SearchForm/>
-            <Selector/>
-            <Products/>
-            <button onClick={fetchProducts}>GET</button>
-        </div>
-    );
+  return (
+    <div className={classes.App}>
+      <Logo/>
+      <SearchForm/>
+      <Selector/>
+      <ProductsList/>
+    </div>
+  );
 }
 
 export default App;
