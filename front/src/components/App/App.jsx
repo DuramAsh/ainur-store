@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import SearchForm from '../SearchForm/SearchForm'
+import SearchForm from '../UI/SearchForm/SearchForm'
 import Selector from "../Selector/Selector"
 import classes from './App.module.css';
 import ProductsList from "../Products/ProductsList";
@@ -7,6 +7,7 @@ import {Products} from "../../db";
 import Navbar from "../Navbar/Navbar";
 import Modal from "../Modal/Modal";
 import CartProductsList from "../Products/CartProductsList";
+import CustomButton from "../UI/CustomButton/CustomButton";
 
 
 const App = () => {
@@ -23,7 +24,9 @@ const App = () => {
     const twoFilters = () => {
       setProducts(Products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) && product.categories.includes(selectedFilter)))
     }
-    twoFilters()
+    setTimeout(() => {
+      twoFilters()
+    }, 100)
   }, [selectedFilter, query])
   
   const addToCart = (productId) => {
@@ -47,12 +50,12 @@ const App = () => {
     <div className={classes.App}>
       <Navbar onClick={() => setModal(true)}/>
       <Modal visible={modal} setVisible={setModal}>
-        <button onClick={() => setModal(false)}>Close</button>
-        <button onClick={() => {
+        <CustomButton onClick={() => setModal(false)}>Close</CustomButton>
+        <CustomButton onClick={() => {
           window.open(WHATSAPP_LINK, '_blank')
         }
         }>Ватс
-        </button>
+        </CustomButton>
         <CartProductsList products={cart} onClick={deleteFromCart}/>
       </Modal>
       <SearchForm value={query} onChange={setQuery}/>

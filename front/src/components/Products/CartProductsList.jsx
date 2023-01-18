@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from "./ProductsList.module.css";
+import CustomButton from "../UI/CustomButton/CustomButton";
 
 const CartProductsList = ({products, onClick}) => {
   return (
@@ -11,7 +12,7 @@ const CartProductsList = ({products, onClick}) => {
           <h3>{["Цена:", product.price, "₸"].join(' ')}</h3>
           <h3>{"Размеры: " + product.sizes}</h3>
           <h4>{"Кол-во: " + product.count}</h4>
-          <button onClick={() => onClick(product.id)}>X</button>
+          <CustomButton onClick={() => onClick(product.id)}>X</CustomButton>
         </div>
       ))}
     </div>

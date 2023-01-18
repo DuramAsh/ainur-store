@@ -3,7 +3,7 @@ import classes from './Logo.module.css'
 
 const Logo = () => {
   return (
-    <img className={classes.Logo} src="https://taplink.st/a/3/e/a/5/9040d.jpg?271" alt="logo"/>
+    <img className={classes.Logo} src="https://www.names.co.uk/blog/wp-content/uploads/2018/05/dotSTORE.png" alt="logo"/>
   );
 };
 

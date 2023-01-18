@@ -1,5 +1,6 @@
 import classes from './ProductsList.module.css'
 import React from "react";
+import CustomButton from "../UI/CustomButton/CustomButton";
 
 
 const ProductsList = ({products, onClick}) => {
@@ -11,7 +12,7 @@ const ProductsList = ({products, onClick}) => {
           <h3>{product.title}</h3>
           <h3>{["Цена:", product.price, "₸"].join(' ')}</h3>
           <h3>{"Размеры: " + product.sizes}</h3>
-          <button onClick={() => onClick(product.id)}>Добавить в корзину</button>
+          <CustomButton onClick={() => onClick(product.id)}>Добавить в корзину</CustomButton>
         </div>
       ))}
     </div>
