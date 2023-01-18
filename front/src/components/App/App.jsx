@@ -19,18 +19,12 @@ const App = () => {
   const [cart, setCart] = useState([])
   const [modal, setModal] = useState(false)
   
-  const filterProducts = (filter) => {
-    console.log(filter)
-    setSelectedFilter(filter)
-    setProducts(Products.filter(product => product.categories.includes(selectedFilter)))
-  }
-  
-  const onSearch = (text) => {
-    setQuery(text)
-    setProducts(Products.filter((product) => {
-      return product.title.toLowerCase().includes(text.toLowerCase())
-    }))
-  }
+  useEffect(() => {
+    const twoFilters = () => {
+      setProducts(Products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) && product.categories.includes(selectedFilter)))
+    }
+    twoFilters()
+  }, [selectedFilter, query])
   
   const addToCart = (productId) => {
     let ind = cart.findIndex(product => productId === product.id)
@@ -42,10 +36,6 @@ const App = () => {
     }
     console.log(Products)
   }
-  
-  useEffect((filter) => {
-    filterProducts(filter)
-  }, [selectedFilter])
   
   const deleteFromCart = (productId) => {
     let ind = cart.findIndex(product => productId === product.id)
@@ -65,8 +55,8 @@ const App = () => {
         </button>
         <CartProductsList products={cart} onClick={deleteFromCart}/>
       </Modal>
-      <SearchForm value={query} onChange={onSearch}/>
-      <Selector value={selectedFilter} onChange={filterProducts}/>
+      <SearchForm value={query} onChange={setQuery}/>
+      <Selector value={selectedFilter} onChange={setSelectedFilter}/>
       <ProductsList products={products} onClick={addToCart}/>
     </div>
   );
