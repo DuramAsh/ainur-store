@@ -1,19 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import classes from "./ProductsList.module.css";
 
 const CartProductsList = ({products, onClick}) => {
-  const [count, setCount] = useState(0)
   return (
     <div className={classes.productList}>
       {products.map(product => (
         <div key={product.id} className={classes.product}>
-          <h1>{product.id}</h1>
+          <img src={product.imgURL} alt={product.id}></img>
           <h3>{product.title}</h3>
-          <img src={product.thumbnailUrl} alt={product.id}></img>
-          {count === 0
-            ? <h1>Nothing to see</h1>
-            : count
-          }
+          <h3>{["Цена:", product.price, "₸"].join(' ')}</h3>
+          <h3>{"Размеры: " + product.sizes}</h3>
+          <h4>{"Кол-во: " + product.count}</h4>
           <button onClick={() => onClick(product.id)}>X</button>
         </div>
       ))}

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import SearchForm from '../SearchForm/SearchForm'
 import Selector from "../Selector/Selector"
 import classes from './App.module.css';
@@ -20,10 +20,9 @@ const App = () => {
   const [modal, setModal] = useState(false)
   
   const filterProducts = (filter) => {
+    console.log(filter)
     setSelectedFilter(filter)
-    setProducts(products.filter((product) => {
-      return true
-    }))
+    setProducts(Products.filter(product => product.categories.includes(selectedFilter)))
   }
   
   const onSearch = (text) => {
@@ -34,14 +33,23 @@ const App = () => {
   }
   
   const addToCart = (productId) => {
-    if (cart.findIndex(product => productId === product.id) > -1) {
-      console.log('FOUND')
+    let ind = cart.findIndex(product => productId === product.id)
+    if (ind > -1) {
+      cart[ind].count += 1
+      setCart([...cart.filter(product => product.id !== productId), cart[ind]])
     } else {
       setCart([...cart, Products.filter(product => productId === product.id)[0]])
     }
+    console.log(Products)
   }
   
+  useEffect((filter) => {
+    filterProducts(filter)
+  }, [selectedFilter])
+  
   const deleteFromCart = (productId) => {
+    let ind = cart.findIndex(product => productId === product.id)
+    cart[ind].count = 1
     setCart(cart.filter(product => productId !== product.id))
   }
   
