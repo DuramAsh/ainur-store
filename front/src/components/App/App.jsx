@@ -17,7 +17,7 @@ const App = () => {
   
   useEffect(() => {
     const twoFilters = () => {
-      setProducts(Products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) && product.categories.includes(selectedFilter)))
+      setProducts(Products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) && product.categories.findIndex(selectedFilter) > -1))
     }
     setTimeout(() => {
       twoFilters()
