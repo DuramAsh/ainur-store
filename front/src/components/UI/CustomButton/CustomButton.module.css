@@ -1,10 +1,12 @@
 .btn {
     color: royalblue;
+    height: auto;
+    width: auto;
     font-size: 18px;
     padding: 5px;
     margin: 10px;
     text-align: center;
-    border-radius: 24px;
+    border-radius: 10px;
     box-shadow: gray 2px 2px;
 }
 

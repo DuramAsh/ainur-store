@@ -19,4 +19,12 @@
     background: white;
     border-radius: 16px;
     min-width: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img {
+    width: 500px;
+    cursor: pointer;
 }

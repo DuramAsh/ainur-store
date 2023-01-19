@@ -5,7 +5,6 @@ export const Products = [
     "imgURL": "//taplink.st/p/d/7/7/a/51362415.jpg?0",
     "price": 4500,
     "sizes": "41-52 см",
-    "count": 1,
     "categories": "Все товары,Головные уборы,Для девочек"
   },
   {
@@ -14,7 +13,6 @@ export const Products = [
     "imgURL": "//taplink.st/p/7/0/1/3/51362202.jpg?0",
     "price": 15500,
     "sizes": "21\\22\\23\\24\\25\\26\\27\\28",
-    "count": 1,
     "categories": "Все товары,Для мальчиков,Для девочек,Обувь"
   },
   {
@@ -23,7 +21,6 @@ export const Products = [
     "imgURL": "//taplink.st/p/4/e/4/8/51362082.jpg?0",
     "price": 19900,
     "sizes": "22\\23\\24\\25\\26\\27\\28",
-    "count": 1,
     "categories": "Все товары,Для мальчиков,Для девочек,Обувь"
   }
 ]
