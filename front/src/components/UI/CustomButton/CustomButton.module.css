@@ -1,12 +1,12 @@
 .btn {
     color: royalblue;
-    height: auto;
-    width: auto;
+    width: 100px;
+    height: 60px;
     font-size: 18px;
     padding: 5px;
     margin: 10px;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: gray 2px 2px;
 }
 
@@ -17,4 +17,10 @@
 
 .btn:active {
     box-shadow: none;
+}
+
+@media screen and (max-device-width: 650px) {
+    .btn {
+        font-size: 14px;
+    }
 }

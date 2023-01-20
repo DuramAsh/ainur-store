@@ -23,3 +23,15 @@
     width: 150px;
     height: 150px;
 }
+
+@media screen and (max-device-width: 840px) {
+    .product {
+        width: 50%;
+    }
+}
+
+@media screen and (max-device-width: 500px) {
+    .product {
+        width: 100%;
+    }
+}

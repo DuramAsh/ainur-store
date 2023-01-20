@@ -29,6 +29,13 @@ const App = () => {
       setCart([...cart, Products.filter(product2 => productId === product2.id)[0]])
   }
   
+  useEffect(() => {
+    const changePhotos = () => {
+    
+    }
+    changePhotos()
+  }, [])
+  
   const deleteFromCart = (productId) => {
     setCart(cart.filter(product => productId !== product.id))
   }
