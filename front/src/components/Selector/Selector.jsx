@@ -11,7 +11,7 @@ const Selector = ({value, onChange}) => {
       <option>Куртки</option>
       <option>Обувь</option>
       <option>Платья</option>
-      <option>Сумки-рюкзаки</option>
+      <option>Сумки</option>
     </select>
   );
 };

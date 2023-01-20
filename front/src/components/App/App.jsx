@@ -9,7 +9,7 @@ import Modal from "../Modal/Modal";
 
 
 const App = () => {
-  const [selectedFilter, setSelectedFilter] = useState("")
+  const [selectedFilter, setSelectedFilter] = useState("Все товары")
   const [products, setProducts] = useState(Products)
   const [query, setQuery] = useState("")
   const [cart, setCart] = useState([])
@@ -17,7 +17,7 @@ const App = () => {
   
   useEffect(() => {
     const twoFilters = () => {
-      setProducts(Products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) && product.categories.findIndex(selectedFilter) > -1))
+      setProducts(Products.filter(product => product.title.toLowerCase().includes(query.toLowerCase()) && product.categories.includes(selectedFilter)))
     }
     setTimeout(() => {
       twoFilters()
@@ -34,7 +34,7 @@ const App = () => {
   }
   
   return (
-    <div className={classes.App}>
+    <div className={classes.App}>x
       <Navbar onClick={() => setModal(true)}/>
       <Modal visible={modal} setVisible={setModal} cart={cart} deleteFromCart={deleteFromCart}></Modal>
       <SearchForm value={query} onChange={setQuery}/>
