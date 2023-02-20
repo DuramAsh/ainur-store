@@ -1,5 +1,4 @@
 .mySelect {
-    border: 1px solid grey;
     font-size: 18px;
     text-align: center;
     cursor: pointer;
@@ -7,4 +6,6 @@
     margin: 10px auto;
     padding: 5px;
     border-radius: 8px;
+    background: mintcream;
+    border: 0;
 }
